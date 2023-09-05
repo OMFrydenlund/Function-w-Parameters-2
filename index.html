@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="changeBackgroundColor('red')">Red</button>
+    <button onclick="changeBackgroundColor('green')">Green</button>
+    <button onclick="changeBackgroundColor('blue')">Blue</button> <br><br>
+    <button id="bucket1" onclick="matchCurrentBackgroundColor('bucket1')">MatchBackground1</button>
+    <button id="bucket2" onclick="matchCurrentBackgroundColor('bucket2')">MatchBackground2</button>
+
+    <script>
+        function changeBackgroundColor(color) {
+            document.body.style.backgroundColor = color;
+        }
+
+        function matchCurrentBackgroundColor(whichBucket) {
+            var bucket = document.getElementById(whichBucket);
+            var currentBackgroundColor = document.body.style.backgroundColor;
+            bucket.style.backgroundColor = currentBackgroundColor;
+        }
+        // var ligger in matchCurrentBackgroundColor funksjon, fordi den skal hentes i forhold dens scope og ikke global i scriptfilen?
+        // sjekk .classList.add/remove/toggle()
+    </script>
+</body>
+
+</html>
